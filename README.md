@@ -1,0 +1,2 @@
+# querysolz
+online course portal
