@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+ 
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <!--   <style>
+  .fixed-nav-bar
+   {
+  position: fixed;
+  }
+  </style>
+  -->
+
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Querysolz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<style type="text/css">
+    h1{
+        margin: 30px 0;
+        padding: 0 200px 15px 0;
+        border-bottom: 1px solid #E5E5E5;
+    }
+	.bs-example{
+    	margin: 20px;
+    }
+
+	</style>
+
+	<script src="editor.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#txtEditor").Editor();
+			});
+		</script>
+
+	</head>
+	<body style="background-color:	#F0F0F0  ">
+	
+	<nav class="navbar  navbar-fixed-top">
+	<div style="background-color: rgba(255,255,255,0.5);" id="fh5co-page">
+	<header id="fh5co-header" role="banner">
+		<div class="container">
+			<div class="header-inner">
+				<h1><a href="index.html">Querysolz</a></h1>
+				<h1 align="center" style="margin-left: 20%;"><u>Questions</u></h1>
+				<nav role="navigation">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="contactus.html">ContactUs</a></li>
+						<li><a href="aboutus.html">AboutUs</a></li>
+						<li style="padding-right: 15px;"><a href="feedback.html">Feedback</a></li>
+						
+						<select class="place_holder dropdown" style="height:30px;width:86px;margin-right:;margin-top: -15px;border-radius: 0px 0px 0px 0px;-moz-border-radius: 0px 0px 0px 0px;webkit-border-radius: 0px 0px 0px 0px;border: 2px solid black;" name="whichpage" id="whichpage" 
+ 							onChange="if(this.selectedIndex!=0)
+							self.location=this.options[this.selectedIndex].value">
+						 <option selected="selected" style="display: none;">Login</option>
+    					 <option value="file:///C:/Users/HP/Desktop/divya_mod/querysolz/ssig.html" style="font-size: 15px;font-family: Arial;font-weight: bold;font-size:17px;" class="btn btn-default">Student Login</option>
+    					 <option value="file:///C:/Users/HP/Desktop/divya_mod/querysolz/msig.html" style="font-size: 15px;font-family: Arial;font-weight: bold;font-size:17px;" class="btn btn-default">Mentor Login</option>
+						</select>
+						
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+	</header>
+	</nav>
+	
+
+
+
+	<div class="bs-example">
+    <form style="margin-top: 10%;" class="form-horizontal">
+    	<div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="inputEmail">Area:</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="question" placeholder="Which area is your question related to">
+            </div>
+        </div>
+    	<div class="form-group">
+      <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="inputEmail">Title:</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="question" placeholder="What's yor pragramming question? Be specific.">
+            </div>
+        </div>
+         <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3">Gender:</label>
+            <div class="col-xs-2">
+                <label class="radio-inline">
+                    <input type="radio" name="genderRadios" value="male"> Male
+                </label>
+            </div>
+            <div class="col-xs-2">
+                <label style="color: black;font-size:18px;" class="radio-inline">
+                    <input type="radio" name="genderRadios" value="female"> Female
+                </label>
+            </div>
+        </div>	
+        <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="inputEmail">Email:</label>
+            <div class="col-xs-5">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+        <!--
+        <div class="form-group">
+            <label class="control-label col-xs-3" for="inputPassword">Password:</label>
+            <div class="col-xs-9">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-3" for="confirmPassword">Confirm Password:</label>
+            <div class="col-xs-9">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+            </div>
+        </div>
+        -->
+
+        <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="firstName">First Name:</label>
+          
+            
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="lastName">Last Name:</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="phoneNumber">Phone:</label>
+            <div class="col-xs-5">
+                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+            </div>
+        </div>
+        <!--
+        <div class="form-group">
+            <label class="control-label col-xs-3">Date of Birth:</label>
+            <div class="col-xs-3">
+                <select class="form-control">
+                    <option>Date</option>
+                </select>
+            </div>
+            <div class="col-xs-3">
+                <select class="form-control">
+                    <option>Month</option>
+                </select>
+            </div>
+            <div class="col-xs-3">
+                <select class="form-control">
+                    <option>Year</option>
+                </select>
+            </div>
+        </div>
+        -->
+        <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="postalAddress">Address:</label>
+            <div class="col-xs-5">
+                <textarea rows="3" class="form-control" id="postalAddress" placeholder="Postal Address"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="ZipCode">Zip Code:</label>
+            <div class="col-xs-5">
+                <input type="text" class="form-control" id="ZipCode" placeholder="Zip Code">
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="color: black;font-size:18px;" class="control-label col-xs-3" for="postalAddress">Address:</label>
+            <div class="col-xs-7">
+                <textarea rows="6" class="form-control" id="postalAddress" placeholder="Postal Address"></textarea>
+            </div>
+        </div>
+        <div class="form-group" style="padding-top: 3%;">
+            <div class="col-xs-offset-3 col-xs-9">
+                <label style="color: black;font-size:18px;" class="checkbox-inline">
+                    <input type="checkbox" value="news"> Send me latest news and updates.
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+                <label style="color: black;font-size:18px;" class="checkbox-inline">
+                    <input type="checkbox" value="agree">  I agree to the <a href="#">Terms and Conditions</a>.
+                </label>
+            </div>
+        </div>
+        
+        <br>
+        <div class="form-group" style="padding-left: 15%;padding-bottom: 2%;">
+            <div class="col-xs-offset-3 col-xs-9">
+                <input type="submit" class="btn btn-primary" value="Post">
+                <input type="reset" class="btn btn-default" value="Reset">
+            </div>
+        </div>
+     	
+     
+    </form>
+</div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<footer id="fh5co-footer" role="contentinfo">
+	
+		<div class="container">
+			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>About Us</h3>
+				<p>We provide solution to user's queries.</p>
+				<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">Join Us <i class="icon-arrow-right"></i></a></p>
+			</div>
+			<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Our Services</h3>
+				<ul class="float">
+					<li><a href="#">Web Technology</a></li>
+					<li><a href="#">Networking</a></li>
+					<li><a href="#">Programming</a></li>
+					<li><a href="#">Image Processing</a></li>
+				</ul>
+		<!--		<ul class="float">
+					<li><a href="#">Free Bootstrap Template</a></li>
+					<li><a href="#">Free HTML5 Template</a></li>
+					<li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
+					<li><a href="#">HandCrafted Templates</a></li>
+				</ul>
+        -->
+			</div>
+
+			<div class="col-md-3 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Follow Us</h3>
+				<ul class="fh5co-social">
+					<li><a href="#"><i class="icon-twitter"></i></a></li>
+					<li><a href="#"><i class="icon-facebook"></i></a></li>
+					<li><a href="#"><i class="icon-google-plus"></i></a></li>
+					<li><a href="#"><i class="icon-instagram"></i></a></li>
+				</ul>
+			</div>
+			
+			
+			<div class="col-md-12 fh5co-copyright text-center">
+				<p>&copy; 2016 Free HTML5 template. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Unsplash</a></span></p>	
+			</div>
+			
+		</div>
+	</footer>
+	</div>
+	
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Owl Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
