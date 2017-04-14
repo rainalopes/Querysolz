@@ -179,6 +179,7 @@ $row_posts=mysqli_fetch_array($run_posts);
 	$user_id=$row_posts['email_id'];
 	$post_title=$row_posts['post_title'];
 	$content=$row_posts['post_content'];
+	$snapshot=$row_posts['snapshot'];
 	$post_date=$row_posts['post_date'];
 	$course_id=$row_posts['topic_id'];
 	$subcourse_id=$row_posts['subcourse_id'];
@@ -214,6 +215,7 @@ echo "<div id='posts'>
 <h3>$post_title</h3>
 <p>$post_date</p>
 <p>$content</p>
+<img src='uploads/$snapshot' style='height:100px;width:100px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
 </div><br/>";
@@ -234,6 +236,7 @@ echo "<div id='posts'>
 <h3>$post_title</h3>
 <p>$post_date</p>
 <p>$content</p>
+<img src='uploads/$snapshot' style='height:100px;width:100px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
 </div><br/>";

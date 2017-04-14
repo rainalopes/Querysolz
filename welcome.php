@@ -58,8 +58,8 @@ font-face:bold;
 	background:#AFEEEE;
 	width:250px;
 	float:left;
-	height:800px;
-	border-right:1px solid black;
+	height:auto;
+	border:1px solid black;
 }
 
 #user_details{
@@ -100,11 +100,40 @@ font-weight:bolder;
 #menu{
 	line-height:35px;
 	padding:0;	
+	list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+	height:50px;
 }
 #menu li{
 	display:inline;
 	list-style:none;
 	font-size:125%;
+	float: left;
+	color:white;
+	
+}
+#menu li a {
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#menu li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
+}
+#post{
+	border:2px solid black;
+	background-color:#F9DDA2;
+	padding:15px;
 }
 </style>
 <SCRIPT language=JavaScript>
@@ -120,21 +149,18 @@ self.location='welcome.php?topic=' + val ;
    <body style="background-color:lightblue;">
    <!--container starts-->
    <div id="container">
-   <h3 style="text-align:left;color:PURPLE;font-size:200%;"><u><b>QUERYSOLZ</b></u></h3>
    <ul id="menu">
-   <li><a href="welcome.php">HOME</a>&nbsp&nbsp&nbsp</li>
-   <strong style="font-size:125%;">Topics:</strong>
-   <?php
-   $get_topics="select * from courses";
-   $run_topics=mysqli_query($conn,$get_topics);
-   while($row=mysqli_fetch_array($run_topics)){
-	   $topic_id=$row['id'];
-	   $topic_name=$row['name'];
-	   echo "<li><a href='welcome.php?topic=$topic_id'>$topic_name</a></li> &nbsp&nbsp&nbsp";
-   }?>
+    <li><a class="active" href="welcome_mentor.php">HOME</a>&nbsp&nbsp&nbsp</li>
+   <li><a href='My_Courses.php'>Enrolled Courses</a></li>
+<li><a href='my_messages.php'>Messages</a></li>
+<li><a href='edit_profile.php'>Edit Profile</a></li>
+<li><a href='logout.php'>Logout</a></li>
+<li style="padding: 14px 16px;float:right;">QUERYSOLZ.</li>
    </ul>
    </div>
    <!--container ends-->
+    
+	  <br><br>
       <h5 style="font-size:150%;">Welcome <?php echo $login_session; ?></h5> 
 
 
@@ -165,9 +191,7 @@ $user_dob=$row['dob'];
 echo "<div style='background:lightgray; border:2px solid black;border-radius:20px;width:200px;margin:0 auto;padding:5px'><p><strong>Name:</strong> $user_fname &nbsp $user_lname </p>
 <p><strong>College:</strong> $user_college </p>
 <p><strong>Date Of Birth:</strong> $user_dob </p>
-<p><a href='my_messages.php'>Messages</a></p>
-<p><a href='edit_profile.php'>Edit Profile</a></p>
-<p><a href='logout.php'>Logout</a></p></div>";
+</div>";
 ?>
 </div>
 </div>
@@ -180,10 +204,10 @@ $get_subtopic = "select * from sub_courses where course_id= '$course' ";
 }
 else{$get_subtopic="SELECT * from sub_courses "; } 
 ?>
-<form action="welcome.php?id=<?php echo $user;?>" method="post" id="f">
+<form action="welcome.php?id=<?php echo $user;?><?php echo $_SERVER['PHP_SELF']; ?>" method="post"id="f" enctype="multipart/form-data">
 <h3>So what's Your Question today??? Post it and start your discussion.</h3>
 <?php 
-echo "<select name='topic' id='topic' onchange=\"reload(this.form)\">
+echo "<select name='topic' id='topic' onchange=\"reload(this.form)\" required>
    <option value=''>Select Topic</option>";
    $get_topics="select * from courses";
    $run_topics = mysqli_query($conn,$get_topics);
@@ -197,7 +221,7 @@ else{echo "<option value='$topic_id'>$topic_title</option>";}
 echo "</select>";
 ?>
 <?php
-echo"<select name='SubTopic'  id='SubTopic'>
+echo"<select name='SubTopic'  id='SubTopic' required>
 <option value=''> Sub Topic </option>";
 $run_subtopic = mysqli_query($conn,$get_subtopic);
 while($row_sub = mysqli_fetch_array($run_subtopic)){
@@ -212,17 +236,31 @@ echo "</select>";
 <input type="text" name="title" placeholder="Write a title" required size="75"/><br><br>
 <textarea cols="65" rows="4" name="content" placeholder="Write description..." required></textarea>
 <br><br>
-
+ <input type="file" name="snapshot" accept="image/*"/>
 
 <input type="submit" name="submit" value="Post"/>
 </form>
 <?php 
 if(isset($_POST['submit'])){
-	$title=addslashes($_POST['title']);
-	$content=addslashes($_POST['content']);
+	$title=htmlspecialchars(addslashes($_POST['title']));
+	$content=htmlspecialchars(addslashes($_POST['content']));
+	$topic=$_POST['topic'];
+	$subtopic = $_POST['SubTopic'];
+	$target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES['snapshot']['name']);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+    if (move_uploaded_file($_FILES['snapshot']['tmp_name'], $target_file)) {
+        echo "The file ". basename( $_FILES['snapshot']['name']). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+
+    $post_image=basename( $_FILES['snapshot']['name']); 
 	$topic=$_POST['topic'];
 	$subtopic=$_POST['SubTopic'];
-	$insert="insert into posts(email_id,topic_id,subcourse_id,post_title,post_content,post_date) values('$login_session','$topic','$subtopic','$title','$content',NOW())";
+	$insert="insert into posts(email_id,topic_id,subcourse_id,post_title,post_content,snapshot,post_date) values('$login_session','$topic','$subtopic','$title','$content','$post_image',NOW())";
 $run=mysqli_query($conn,$insert);
 if($run){
 	echo"<h3>Posted to timeline!!!</h3>";
@@ -252,6 +290,7 @@ while($row_posts=mysqli_fetch_array($run_posts))
 	$user_id=$row_posts['email_id'];
 	$post_title=$row_posts['post_title'];
 	$content=$row_posts['post_content'];
+	$snapshot=$row_posts['snapshot'];
 	$post_date=$row_posts['post_date'];
 	$course_id=$row_posts['topic_id'];
 	$subcourse_id=$row_posts['subcourse_id'];
@@ -288,9 +327,10 @@ echo "<div id='posts'>
 <h3>$post_title</h3>
 <p>$post_date</p>
 <p>$content</p>
+<img src='uploads/$snapshot' style='height:100px;width:100px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
-<a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
+<a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a>
 </div>"; 
 	}
 	else{
@@ -309,6 +349,7 @@ echo "<div id='posts'>
 <h3>$post_title</h3>
 <p>$post_date</p>
 <p>$content</p>
+<img src='uploads/$snapshot' style='height:100px;width:100px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
 <a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
@@ -321,10 +362,7 @@ include("pagination.php");
 </div>
  </div>
 </div>
-<!--<form method="post" action="">
-<label></label><br>
-<input></input>
-</form>-->
+
 
    </body>
    

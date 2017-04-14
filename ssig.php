@@ -22,6 +22,17 @@
          
          header("location: welcome.php");
       }
+	  else if($count == 1 && $row['designation']=="teacher") 
+{
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: welcome_mentor.php");
+      }
+	  else if($count == 1 && $row['designation'] == "admin"){
+		  $_SESSION['login_user'] = $myusername;
+         
+         header("location: welcome_admin.php");
+	  }
 else {
         
         header("location: error.html");
@@ -285,12 +296,7 @@ else{
 						<li><a href="contactus.html">ContactUs</a></li>
 						<li><a href="aboutus.html">AboutUs</a></li>
 						<li style="padding-right: 15px;"><a href="feedback.html">Feedback</a></li>
-						<select class="place_holder dropdown" style="height:30px;width:86px;padding-right:;margin-top: -15px;border-radius: 0px 0px 0px 0px;-moz-border-radius: 0px 0px 0px 0px;webkit-border-radius: 0px 0px 0px 0px;border: 2px solid #8c888c;" name="whichpage" id="whichpage" 
- 							onChange="if(this.selectedIndex!=0)
-							self.location=this.options[this.selectedIndex].value">
-						 <option selected="selected" style="display: none;">Student Login</option>
-    					<option value="msig.php" style="font-size: 15px;font-family: Arial;font-weight: bold;font-size:17px;" class="btn btn-default">Mentor Login</option>
-						</select>
+						<li><a href="ssig.php">Login</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -336,7 +342,7 @@ else{
     
             <div class="panel panel-info" >
                     <div class="panel-heading">
-                        <div class="panel-title" style="text-rendering: optimizeLegibility;font-size: 18px;color:black;">Sign In As Student</div>
+                        <div class="panel-title" style="text-rendering: optimizeLegibility;font-size: 18px;color:black;">Sign In</div>
                         <div style="float:right;position: relative; top:-17px;text-rendering: optimizeLegibility;"><a href="#">Forgot password?</a></div>
                     </div>     
 
