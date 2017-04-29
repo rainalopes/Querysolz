@@ -211,7 +211,7 @@ var em= document.forms["signform"]["email"].value;
 
 
 
-var d= document.forms["signform"]["dob"].value;
+/*var d= document.forms["signform"]["dob"].value;
  var goodDate = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;
  if (d== "" || d== null) {
                  alert("Date of Birth must be filled out");
@@ -225,7 +225,7 @@ var d= document.forms["signform"]["dob"].value;
     else
     {
 
-    }
+    }*/
 
 
 
@@ -554,7 +554,7 @@ onsubmit="return validatesignupForm()">
 
 		<div class="col-md-6" style="padding-top: 20px;padding-left: 40px">
 		<div class="form-group">
-		<input class="form-control" placeholder="Date Of Birth" type="text" name="dob">
+		<input class="form-control" placeholder="Date Of Birth" type="date" name="dob">
            
 
 		</div>

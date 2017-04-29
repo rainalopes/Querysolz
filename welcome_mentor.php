@@ -130,7 +130,7 @@ font-weight:bolder;
 .active {
     background-color: #4CAF50;
 }
-#post{
+#post,posts{
 	border:2px solid black;
 	background-color:#F9DDA2;
 	padding:15px;
@@ -321,10 +321,10 @@ echo "<div id='post'>
 <h3>$post_title)</h3>
 <p>$post_date</p>
 <p>$content</p>
-<img src='uploads/$snapshot' style='height:100px;width:100px'/>
+<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
-<a href='single_mentor.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br><br>
+<a href='single_mentor.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
 </div>"; 
 	}
 	else{
@@ -343,7 +343,7 @@ echo "<div id='post'>
 <h3>$post_title</h3>
 <p>$post_date</p>
 <p>$content</p>
-<img src='uploads/$snapshot' style='height:100px;width:100px'/>
+<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
 <a href='single_mentor.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>

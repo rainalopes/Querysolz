@@ -321,16 +321,16 @@ $image="select * from login where email_id='$user_id'";
 $run_image=mysqli_query($conn,$image);
 $row_image=mysqli_fetch_array($run_image);
 $user_image=$row_image['user_image'];
-echo "<div id='posts'>
+echo "<div id='post'>
 <p><img src='$user_image' width='50' height='50'></p>
 <h3><a href='user_profile.php?user_id=$user_id'>$fname&nbsp$lname</a></h3>
 <h3>$post_title</h3>
 <p>$post_date</p>
 <p>$content</p>
-<img src='uploads/$snapshot' style='height:100px;width:100px'/>
+<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
-<a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a>
+<a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
 </div>"; 
 	}
 	else{
@@ -343,13 +343,13 @@ $image="select * from login where email_id='$user_id'";
 $run_image=mysqli_query($conn,$image);
 $row_image=mysqli_fetch_array($run_image);
 $user_image=$row_image['user_image'];
-echo "<div id='posts'>
+echo "<div id='post'>
 <p><img src='$user_image' width='50' height='50'></p>
 <h3>Mentor:<a href='user_profile.php?user_id=$user_id'>$fname&nbsp$lname</a></h3>
 <h3>$post_title</h3>
 <p>$post_date</p>
 <p>$content</p>
-<img src='uploads/$snapshot' style='height:100px;width:100px'/>
+<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
 <a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
