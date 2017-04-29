@@ -253,11 +253,11 @@ if(isset($_POST['submit'])){
 
     if (move_uploaded_file($_FILES['snapshot']['tmp_name'], $target_file)) {
         echo "The file ". basename( $_FILES['snapshot']['name']). " has been uploaded.";
+		$post_image=basename( $_FILES['snapshot']['name']);
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        $post_image=basename( $_FILES['snapshot']['name']);
     }
 
-    $post_image=basename( $_FILES['snapshot']['name']); 
 	$topic=$_POST['topic'];
 	$subtopic=$_POST['SubTopic'];
 	$insert="insert into posts(email_id,topic_id,subcourse_id,post_title,post_content,snapshot,post_date) values('$login_session','$topic','$subtopic','$title','$content','$post_image',NOW())";
@@ -326,13 +326,20 @@ echo "<div id='post'>
 <h3><a href='user_profile.php?user_id=$user_id'>$fname&nbsp$lname</a></h3>
 <h3>$post_title</h3>
 <p>$post_date</p>
-<p>$content</p>
-<img src='uploads/$snapshot' style='height:200px;width:500px'/>
+<p>$content</p>";
+if(empty($snapshot)){
+	echo"<p><strong>Topic:$topicname</strong></p>
+<p><strong>Sub-Topic:$subtopicname</strong></p>
+<a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
+</div>";
+}
+else{
+echo"<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
 <a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
 </div>"; 
-	}
+	}}
 	else{
 		$username="select * from mentor where email_id='$user_id'";
 $run_username=mysqli_query($conn,$username);
@@ -348,13 +355,20 @@ echo "<div id='post'>
 <h3>Mentor:<a href='user_profile.php?user_id=$user_id'>$fname&nbsp$lname</a></h3>
 <h3>$post_title</h3>
 <p>$post_date</p>
-<p>$content</p>
-<img src='uploads/$snapshot' style='height:200px;width:500px'/>
+<p>$content</p>";
+if(empty($snapshot)){
+	echo"<p><strong>Topic:$topicname</strong></p>
+<p><strong>Sub-Topic:$subtopicname</strong></p>
+<a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
+</div>";
+}
+else{
+echo"<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
 <a href='single.php?post_id=$post_id' style='float:right;'><button>See Replies or reply to this post</button></a><br>
 </div>"; 
-	}
+	}}
 	
 }
 include("pagination.php");

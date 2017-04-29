@@ -214,11 +214,18 @@ echo "<div id='posts'>
 <h3><a href='user_profile.php?user_id=$user_id'>$fname&nbsp$lname</a></h3>
 <h3>$post_title</h3>
 <p>$post_date</p>
-<p>$content</p>
-<img src='uploads/$snapshot' style='height:200px;width:500px'/>
+<p>$content</p>";
+if(empty($snapshot)){
+	echo"<p><strong>Topic:$topicname</strong></p>
+<p><strong>Sub-Topic:$subtopicname</strong></p>
+</div>";
+}
+else{
+echo"<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
-</div><br/>";
+</div>"; 
+	}
 	}
 	else{
 		$username="select * from mentor where email_id='$user_id'";
@@ -235,11 +242,18 @@ echo "<div id='posts'>
 <h3><a href='user_profile.php?user_id=$user_id'>$fname&nbsp$lname</a></h3>
 <h3>$post_title</h3>
 <p>$post_date</p>
-<p>$content</p>
-<img src='uploads/$snapshot' style='height:200px;width:500px'/>
+<p>$content</p>";
+if(empty($snapshot)){
+	echo"<p><strong>Topic:$topicname</strong></p>
+<p><strong>Sub-Topic:$subtopicname</strong></p>
+</div>";
+}
+else{
+echo"<img src='uploads/$snapshot' style='height:200px;width:500px'/>
 <p><strong>Topic:$topicname</strong></p>
 <p><strong>Sub-Topic:$subtopicname</strong></p>
-</div><br/>";
+</div>"; 
+	}
 	}
 	
 include("comments.php");
