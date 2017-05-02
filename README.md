@@ -55,51 +55,6 @@ The development of Web 2.0 technologies encourages people to share individual op
 
  
 
-Parameters	coursera	stackoverflow	Mini Project
-Open to	      N	           N	         Y
-collaboration i.e.			
-Decentralized and			
-group			
-			
-Post Are owned by	 Y      	Y	         Y
-groups with equal			
-responsibilities			
-Aim Aim is to	     N	      Y        	 Y
-provide support to			
-public to discuss on			
-any topic.			
-			
-It provide static	  Y	      Y          Y
-content: once			
-posted the posting			
-doesn't change			
-(answers are			
-provided by others)			
-Content is	         Y	     Y	       Y
-organized and			
-presented in			
-different ways			
-Comments or	         Y	     Y	       Y
-answers			
-			
-Intent is decision	  N	     Y	       Y
-making			
-(used more to			
-provide support)			
-			
-Login required to	    Y	     N	       N
-see the content			
-			
-Uploading/	          Y      N	       Y
-Downloading			
-			
-Personal profile	    Y	     Y         Y
- 
-
-
-
-
-
 
 
  
@@ -109,7 +64,7 @@ Hardware requirements: Server machine to store database and handle clent request
 
 Software requirements:HTML5,CSS3,AJAX,Angular JS,PHP5.
 
-References:  w ww.google.co.in
+References:  www.google.co.in
 
 ijarcet.org/wp-content/uploads/IJARCET-VOL-1-ISSUE-4-704-708.pdf
 
